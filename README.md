@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.8.1.0-blue.svg)](#parity)
+[![Version](https://img.shields.io/badge/both_ports-1.8.1.1-blue.svg)](#parity)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#license)
 
 **This repository is the front door.** The code lives in one repository per host — pick yours below.
@@ -37,7 +37,7 @@ There is **no provider allowlist anywhere in it.** Every decision is made on evi
 
 Install from the **Plugin Hub** inside Agent Zero (search **KAME**), or drop the folder into `/a0/usr/plugins/`.
 
-Verified in **real sessions on Agent Zero v2.12** — real Gemini keys, 26 of 26 calls answered — and supports v1.14+ and the whole V2 line.
+Version **1.8.1.1** passed offline and Agent Zero v2.12 compatibility checks. The **26 of 26 real-provider calls** were on v1.8.1.0; v1.8.1.1 has not been installed into Agent Zero for a real-provider session. Supports v1.14+ and the V2 line.
 
 </td>
 <td width="50%" valign="top">
@@ -51,7 +51,7 @@ hermes plugins install Kame696/kame-api-rotation-for-hermes/hermes-kame-api-rota
 hermes plugins enable hermes-kame-api-rotation
 ```
 
-Tested on **Hermes 0.21.1 and 0.21.3**, 2,829 tests, `hermes plugins validate` security scan **safe**, no third-party packages.
+Version **1.8.1.1** passed offline and host checks and answered installed-Hermes CLI turns with Gemini and NVIDIA. It was checked against Hermes 0.21.3 and has no third-party package dependencies; see the port's [release notes](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.1) for scope and limits.
 
 </td>
 </tr>
@@ -64,7 +64,7 @@ The two ports share a version line on purpose: **the same number means the same 
 
 | | Agent Zero | Hermes |
 |---|---|---|
-| Current | **1.8.1.0** | **1.8.1.0** |
+| Current | **1.8.1.1** | **1.8.1.1** |
 | Picks the healthiest key per call | ✅ | ✅ |
 | Reads the provider's own retry timing | ✅ | ✅ |
 | Daily cap told apart from a per-minute throttle | ✅ | ✅ |
@@ -75,7 +75,7 @@ The two ports share a version line on purpose: **the same number means the same 
 | Waits out a fully-resting pool, and says so on screen | ✅ | ✅ |
 | Continues an answer the provider cut mid-stream | — *(host owns the stream)* | ✅ |
 | One health file shared by several profiles | — *(one process)* | ✅ |
-| Bulk key import from chat (`/kame-keys`) | — | ✅ |
+| Key management (`/kame-keys` add/import) | ✅ | ✅ |
 | Status chip + panel in a desktop shell | chip beside the composer | ✅ |
 
 The dashes are not missing features. They are jobs the other host already does itself — and the one design rule of this project is that **KAME does not re-implement its host.**
