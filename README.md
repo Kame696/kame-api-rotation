@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.8.1.2-blue.svg)](#parity)
+[![Version](https://img.shields.io/badge/both_ports-1.8.1.6-blue.svg)](#parity)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#license)
 
 **This repository is the front door.** The code lives in one repository per host — pick yours below.
@@ -37,7 +37,7 @@ There is **no provider allowlist anywhere in it.** Every decision is made on evi
 
 Install from the **Plugin Hub** inside Agent Zero (search **KAME**), or drop the folder into `/a0/usr/plugins/`.
 
-Version **1.8.1.2** ran in a real Agent Zero v2.12 session with real Gemini keys: **12 of 12 calls answered**, including 6 at the same time. It also passed the offline suites and v2.12 compatibility checks. Supports v1.14+ and the V2 line.
+Version **1.8.1.6** ran in a real Agent Zero v2.12 session with 14 real Gemini keys: **12 of 12 calls answered**, including 6 at the same time, through 48 provider 503s. It also passed all 23 offline suites and the v2.13 compatibility checks. Supports v1.14+ and the V2 line.
 
 </td>
 <td width="50%" valign="top">
@@ -51,7 +51,7 @@ hermes plugins install Kame696/kame-api-rotation-for-hermes/hermes-kame-api-rota
 hermes plugins enable hermes-kame-api-rotation
 ```
 
-Version **1.8.1.2** ran for hours on the running Hermes 0.21.3 gateway with real agent turns on 14 Gemini and 2 NVIDIA keys, and passed every offline and host check. It has no third-party package dependencies; see the port's [release notes](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.2) for scope and limits.
+Version **1.8.1.6** runs on the author's Hermes 0.21.3 gateway: real agent turns on Gemini and NVIDIA keys answered 16 of 16, a replay of 2,634 recorded refusals changed no decision, and every offline and host check passed (0.21.3 to 0.21.5). It has no third-party package dependencies; see the port's [release notes](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.6) for scope and limits.
 
 </td>
 </tr>
@@ -64,7 +64,7 @@ The two ports share a version line on purpose: **the same number means the same 
 
 | | Agent Zero | Hermes |
 |---|---|---|
-| Current | **1.8.1.2** | **1.8.1.2** |
+| Current | **1.8.1.6** | **1.8.1.6** |
 | Picks the healthiest key per call | ✅ | ✅ |
 | Reads the provider's own retry timing | ✅ | ✅ |
 | Daily cap told apart from a per-minute throttle | ✅ | ✅ |
