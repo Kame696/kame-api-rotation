@@ -51,7 +51,7 @@ hermes plugins install Kame696/kame-api-rotation-for-hermes/hermes-kame-api-rota
 hermes plugins enable hermes-kame-api-rotation
 ```
 
-Version **[1.8.1.8](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.8)** adds progress-based serial continuation, independent profile ownership and a writer-owned snapshot cache. The public suite passed **3,133 tests** (six skips, four expected failures); all **9 CI jobs** passed again. The rotation engine and model settings remain. Optional provider-request racing is deferred. See [validation and limits](https://github.com/Kame696/kame-api-rotation-for-hermes/blob/main/VALIDATION.md); catalog [PR #131918](https://github.com/NousResearch/hermes-agent/pull/131918) awaits maintainer review.
+Version **[1.8.1.8](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.8)** adds progress-based serial continuation, independent profile ownership and a writer-owned snapshot cache. All **9 CI jobs** passed again: **3,132 tests per Windows job** and **3,136 per Linux/macOS job**, with platform-specific skips and four expected failures per job. The rotation engine and model settings remain. Optional provider-request racing is deferred. See [validation and limits](https://github.com/Kame696/kame-api-rotation-for-hermes/blob/main/VALIDATION.md); catalog [PR #131918](https://github.com/NousResearch/hermes-agent/pull/131918) awaits maintainer review.
 
 </td>
 </tr>
