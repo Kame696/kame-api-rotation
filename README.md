@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.8.1.6-blue.svg)](#parity)
+[![Version](https://img.shields.io/badge/both_ports-1.8.1.8-blue.svg)](#parity)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#license)
 
 **This repository is the front door.** The code lives in one repository per host — pick yours below.
@@ -37,7 +37,7 @@ There is **no provider allowlist anywhere in it.** Every decision is made on evi
 
 Install from the **Plugin Hub** inside Agent Zero (search **KAME**), or drop the folder into `/a0/usr/plugins/`.
 
-Version **1.8.1.6** ran in a real Agent Zero v2.12 session with 14 real Gemini keys: **12 of 12 calls answered**, including 6 at the same time, through 48 provider 503s. It also passed all 23 offline suites and the v2.13 compatibility checks. Supports v1.14+ and the V2 line.
+Version **[1.8.1.8](https://github.com/Kame696/kame-api-rotation-for-agent-zero/releases/tag/v1.8.1.8)** improves clean load/unload and native control-flow handling. All **24 offline suites and 14 CI jobs** passed, including official v2.12/v2.13 native hosts with real SDK/TCP fixtures on remote runners. No Agent Zero installation on the owner's computer and no live-provider claim for these fixtures. Earlier-version compatibility remains historical; see [validation and limits](https://github.com/Kame696/kame-api-rotation-for-agent-zero/blob/main/VALIDATION.md).
 
 </td>
 <td width="50%" valign="top">
@@ -51,20 +51,20 @@ hermes plugins install Kame696/kame-api-rotation-for-hermes/hermes-kame-api-rota
 hermes plugins enable hermes-kame-api-rotation
 ```
 
-Version **1.8.1.6** runs on the author's Hermes 0.21.3 gateway: real agent turns on Gemini and NVIDIA keys answered 16 of 16, a replay of 2,634 recorded refusals changed no decision, and every offline and host check passed (0.21.3 to 0.21.5). It has no third-party package dependencies; see the port's [release notes](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.6) for scope and limits.
+Version **[1.8.1.8](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/tag/v1.8.1.8)** adds progress-based serial continuation, independent profile ownership and a writer-owned snapshot cache. The public suite passed **3,133 tests** (six skips, four expected failures); all **9 CI jobs** passed again. The rotation engine and model settings remain. Optional provider-request racing is deferred. See [validation and limits](https://github.com/Kame696/kame-api-rotation-for-hermes/blob/main/VALIDATION.md); catalog [PR #131918](https://github.com/NousResearch/hermes-agent/pull/131918) awaits maintainer review.
 
 </td>
 </tr>
 </table>
 
 <a id="parity"></a>
-## 🔢 Version parity
+## 🔢 Port versions and coverage
 
-The two ports share a version line on purpose: **the same number means the same rules on both hosts.** A release on one side raises the other.
+Both ports currently ship 1.8.1.8. They share evidence-led rotation principles, but their native integrations and validation are host-specific. A release on one side does not automatically certify or bump the other.
 
 | | Agent Zero | Hermes |
 |---|---|---|
-| Current | **1.8.1.6** | **1.8.1.6** |
+| Current | **1.8.1.8** | **1.8.1.8** |
 | Picks the healthiest key per call | ✅ | ✅ |
 | Reads the provider's own retry timing | ✅ | ✅ |
 | Daily cap told apart from a per-minute throttle | ✅ | ✅ |
@@ -82,7 +82,9 @@ The dashes are not missing features. They are jobs the other host already does i
 
 ## 🧠 The one design rule
 
-KAME **only chooses the key**. The request, the stream, the parsing and the result belong to the host, untouched. That is why one build survives host upgrades: the plugin carries no copy of the host's model call to go stale.
+KAME delegates model execution, stream parsing and results to the host rather than copying its model engine. Host-specific guarded bindings handle rotation, auxiliary calls and serial recovery; lifecycle restoration and compatibility tests are part of each release. They remain disclosed, and Hermes catalog policy approval is a separate maintainer decision.
+
+Complete release history: [Agent Zero](https://github.com/Kame696/kame-api-rotation-for-agent-zero/blob/main/CHANGELOG.md) · [Hermes](https://github.com/Kame696/kame-api-rotation-for-hermes/blob/main/hermes-kame-api-rotation/CHANGELOG.md).
 
 ## ❤️ Support the project
 
