@@ -84,7 +84,7 @@ The dashes are not missing features. They are jobs the other host already does i
 
 KAME delegates model execution, stream parsing and results to the host rather than copying its model engine. Host-specific guarded bindings handle rotation, auxiliary calls and serial recovery; lifecycle restoration and compatibility tests are part of each release. They remain disclosed, and Hermes catalog policy approval is a separate maintainer decision.
 
-Complete release history: [Agent Zero](https://github.com/Kame696/kame-api-rotation-for-agent-zero/blob/main/CHANGELOG.md) · [Hermes](https://github.com/Kame696/kame-api-rotation-for-hermes/blob/main/hermes-kame-api-rotation/CHANGELOG.md).
+Complete release history: [Agent Zero](https://github.com/Kame696/kame-api-rotation-for-agent-zero/blob/main/CHANGELOG.md) · [Hermes](https://github.com/Kame696/kame-api-rotation-for-hermes/blob/main/CHANGELOG.md).
 
 ## ❤️ Support the project
 
