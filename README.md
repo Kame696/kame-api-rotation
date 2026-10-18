@@ -46,6 +46,35 @@ Measured live, on the author's own Gemini free-tier keys, on a bad day:
 | Your main model is out of quota | next model, or the turn ends | switched in **0.3 s** |
 | Everything healthy | — | your main model, first word in 2–4 s |
 
+## 🔬 How it works
+
+```mermaid
+flowchart TD
+    A([🤖 Your agent asks for a reply]) --> B[🔑 KAME picks the healthiest key<br/>least loaded · not resting]
+    B --> C[📡 Send the request]
+    C --> D{First word<br/>in time?}
+    D -->|✅ yes| OK([✨ Reply shown<br/>which model and how long])
+    D -->|⏱ slower than usual| E[🏁 Race a backup key,<br/>then your next model]
+    E --> OK
+    D -->|🐌 far too slow| I
+    C --> F{Error?}
+    F -->|429 per-minute| G[💤 Rest that key<br/>the provider's own retry time]
+    F -->|429 daily · no credit| H[🛑 Rest it long<br/>still used on your other models]
+    F -->|503 overloaded| I[🔀 Hand the reply to the<br/>next model of your list]
+    G --> B
+    H --> B
+    I --> J[🎯 The next reply starts on<br/>your best model again]
+    J --> B
+
+    style B fill:#10b981,color:#fff
+    style OK fill:#10b981,color:#fff
+    style E fill:#3b82f6,color:#fff
+    style G fill:#f59e0b,color:#fff
+    style H fill:#ef4444,color:#fff
+    style I fill:#8b5cf6,color:#fff
+    style J fill:#8b5cf6,color:#fff
+```
+
 ## 🚪 Pick your agent
 
 <table>
