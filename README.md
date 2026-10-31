@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.8.2.8-blue.svg)](#-pick-your-agent)
+[![Version](https://img.shields.io/badge/both_ports-1.8.3.1-blue.svg)](#-pick-your-agent)
 [![Free](https://img.shields.io/badge/price-free_forever-brightgreen.svg)](#-faq)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#-license)
 
@@ -31,7 +31,7 @@ on more quota than any single key has.
 - 🔑 **Every key used** — the healthiest key for each call; a refused call moves to the next key at once.
 - ➕ **Quotas add up** — 14 free Gemini projects = 14× the free quota, used as one.
 - ⚡ **Speed first** — a slow reply is raced by a backup key, then by your next model; the first to answer wins.
-- 🔀 **Smart model fallback** — your best model first on every reply; a busy, spent or slow one hands over in seconds.
+- 🔀 **Smart model fallback** — every reply starts on the model you picked; a busy, spent or slow one hands over in seconds, to your main model, then the rest of your list.
 - 🧠 **Reads every error, never guesses** — the provider's own retry time, per-minute vs daily quota, out of credit, revoked key. 82 providers learned from their own docs.
 - 👀 **You see everything** — which model answered each reply and how long it took; a live panel of every key.
 
@@ -39,7 +39,7 @@ on more quota than any single key has.
 
 Measured live, on the author's own Gemini free-tier keys, on a bad day:
 
-| Situation | Before 1.8.2.8 | KAME 1.8.2.8 |
+| Situation | Before 1.8.2.8 | KAME 1.8.2.8 and later |
 |---|---|---|
 | Your main model is slow (2 minutes for one word) | 46–120 s per reply | **2.6 s median** |
 | Your main model is "overloaded" (503) | stuck on it | next model answering at **8.3 s**, then at once |
@@ -58,7 +58,7 @@ flowchart TD
     C -->|❌ 429| G[💤 Rest that key as long<br/>as the provider says]
     G -.->|next key| B
     C -->|❌ 503 or far too slow| I[🔀 Next model of your list]
-    I --> J([🎯 The next reply starts on<br/>your best model again])
+    I --> J([🎯 The next reply starts on<br/>the model you picked again])
 
     style B fill:#10b981,color:#fff
     style OK fill:#10b981,color:#fff
@@ -104,7 +104,7 @@ line, the "which model answered" notice), also install the bridge — see the
 </tr>
 </table>
 
-Both ports ship **1.8.2.8** and share one set of rules.
+Both ports ship **1.8.3.1** and share one set of rules, defaults and timings.
 
 ## 🧩 What each port does
 
@@ -113,7 +113,8 @@ Both ports ship **1.8.2.8** and share one set of rules.
 | Healthiest key per call, next key at once on a failure | ✅ | ✅ |
 | Provider's own retry timing; per-minute vs daily vs out of credit | ✅ | ✅ |
 | 82 providers learned from their own documentation (774 error shapes) | ✅ | ✅ |
-| Your fallback models as one pool, best model first on every reply | ✅ KAME's own list | ✅ Hermes' list |
+| Your fallback models as one pool: the model you picked, then your main model, then the list | ✅ KAME's own list | ✅ Hermes' list |
+| One live status line in plain words; click the chip for your models and the last replies | ✅ in the Calling LLM line | ✅ above the message box |
 | A late reply raced by the next model; the first to answer is shown | ✅ any provider | ✅ same provider |
 | A busy or slow model skipped for a while, then tried first again | ✅ | ✅ |
 | Backup key raced for a slow first word; keys asked together when quota runs dry | ✅ | ✅ |
@@ -136,8 +137,8 @@ more than one key. A refused call moves to the next key at once, and the refused
 back by itself when its quota does.
 
 **Can it fall back to another model automatically?** Yes — only to models *you* listed,
-never after part of the reply is on screen, and every new reply starts on your best model
-again.
+never after part of the reply is on screen, and every new reply starts on the model you
+picked again.
 
 **Which providers?** Any your agent speaks to: Gemini, OpenAI, Anthropic, OpenRouter, Groq,
 Mistral, NVIDIA, DeepSeek, Cerebras, SambaNova, Cloudflare, local models and more. There is
