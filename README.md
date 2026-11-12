@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.8.4.1-blue.svg)](#-pick-your-agent)
+[![Version](https://img.shields.io/badge/both_ports-1.8.4.2-blue.svg)](#-pick-your-agent)
 [![Free](https://img.shields.io/badge/price-free_forever-brightgreen.svg)](#-faq)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#-license)
 
@@ -104,7 +104,7 @@ line, the "which model answered" notice), also install the bridge — see the
 </tr>
 </table>
 
-Both ports ship **1.8.4.1** and share one set of rules, defaults and timings.
+Both ports ship **1.8.4.2** and share one set of rules, defaults and timings.
 
 ## 🧩 What each port does
 
@@ -123,7 +123,9 @@ Both ports ship **1.8.4.1** and share one set of rules, defaults and timings.
 | A refusal no key can fix (a safety block) goes straight back; no key is rested for it | ✅ | ✅ |
 | Your provider's prompt cache stays on; a model that refuses it is remembered | ✅ | ✅ Hermes' own |
 | What KAME did over time: replies answered, replies saved from a provider error | ✅ | ✅ |
+| A main model that keeps failing no longer makes you wait: the next model answers at once while yours is asked beside it, and yours leads again the moment it answers | ✅ | ✅ |
 | Speech with your rotated Gemini keys | — local voice, no key | ✅ optional |
+| Listening with your rotated Gemini keys | — local voice, no key | ✅ optional |
 | Which model answered each reply, and how long it took | ✅ a line after the reply | ✅ a Desktop notice |
 | Live panel: keys, rests, events, fallback list, settings | ✅ | ✅ |
 | Key management in the chat (`/kame-keys`) | ✅ | ✅ |
