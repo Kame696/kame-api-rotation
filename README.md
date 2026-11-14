@@ -28,12 +28,26 @@ Groq, NVIDIA, Mistral, OpenAI, Anthropic… Your AI agent uses **one** of them. 
 **KAME turns all your keys and models into one big pool.** Your agent keeps working, faster,
 on more quota than any single key has.
 
-- 🔑 **Every key used** — the healthiest key for each call; a refused call moves to the next key at once.
-- ➕ **Quotas add up** — 14 free Gemini projects = 14× the free quota, used as one.
-- ⚡ **Speed first** — a slow reply is raced by a backup key, then by your next model; the first to answer wins.
-- 🔀 **Smart model fallback** — every reply starts on the model you picked; a busy, spent or slow one hands over in seconds, to your main model, then the rest of your list.
-- 🧠 **Reads every error, never guesses** — the provider's own retry time, per-minute vs daily quota, out of credit, revoked key. 82 providers learned from their own docs.
-- 👀 **You see everything** — which model answered each reply and how long it took; a live panel of every key.
+### Two jobs in one plugin — most key rotators only do the first
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🔁 Rotation — more quota
+All your keys, projects and accounts become **one pool** (14 Gemini projects = 14× the free quota). A `429`, a daily quota or a dead key moves the call to the **next healthy key at once**, and the refused key rests **exactly as long as the provider says**.
+
+</td>
+<td width="50%" valign="top">
+
+### ⚡ Racing — less waiting
+A reply that is **late**, **stops mid-thought** or **goes silent half-way** is sent again to another key or your **next model**. The first to answer is shown, the rest is cut. Extra requests only when a reply is stuck.
+
+</td>
+</tr>
+</table>
+
+Also: 🔀 **your model leads** — every reply starts on the model you picked; your fallback list takes over only when it is busy, spent or slow · 🧠 **reads every error** — 82 providers learned from their own docs · 👀 **you see everything** — which model answered each reply, and how long it took.
 
 ## ⚡ How fast is it?
 
