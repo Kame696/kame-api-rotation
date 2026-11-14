@@ -37,14 +37,15 @@ on more quota than any single key has.
 
 ## ⚡ How fast is it?
 
-Measured live, on the author's own Gemini free-tier keys, on a bad day:
+Measured live, on the author's own Gemini free-tier keys (four models × 14 keys), November 2026:
 
-| Situation | Before 1.8.2.8 | KAME 1.8.2.8 and later |
-|---|---|---|
-| Your main model is slow (2 minutes for one word) | 46–120 s per reply | **2.6 s median** |
-| Your main model is "overloaded" (503) | stuck on it | next model answering at **8.3 s**, then at once |
-| Your main model is out of quota | next model, or the turn ends | switched in **0.3 s** |
-| Everything healthy | — | your main model, first word in 2–4 s |
+| Situation | What happens |
+|---|---|
+| Your two best models overloaded (503) | the next model answers: first sign of work **2.7 s** median, none over 20 s |
+| A 503 storm, the agent alone | no answer in 200 s; **with KAME, 14–20 s** |
+| A model stops mid-thought | asked again on another key, then on your next model or provider |
+| An answer goes silent half-way | continued after 45 s, where it could sit for minutes before |
+| A key out of quota | the next key or model at once |
 
 ## 🔬 How it works
 
@@ -157,8 +158,9 @@ no provider allowlist — decisions are made on the evidence in each response.
 **Is it a proxy? Do my keys leave my machine?** No proxy. Keys never leave your machine and
 never appear in a log, an event or a panel — only a short fingerprint.
 
-**Does it burn my quota?** No. By default (*Balanced*) a backup request is sent only when a
-reply is clearly slower than usual — about 10% extra requests.
+**Does it burn my quota?** No. By default (*Balanced*) an extra request is sent only when a
+reply is stuck: clearly slower than usual, stopped mid-thought, or silent half-way. None while
+replies flow normally; the panel shows what was really spent.
 
 ## ⭐ Like it?
 
