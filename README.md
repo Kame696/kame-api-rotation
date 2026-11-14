@@ -65,7 +65,7 @@ Open the **Plugin Hub** inside Agent Zero and search **KAME** — or unzip the
 [latest release](https://github.com/Kame696/kame-api-rotation-for-agent-zero/releases/latest)
 into `/a0/usr/plugins/`.
 
-Then paste several keys, comma-separated, into a provider's API key field.
+Then, in **Settings → Model Provider**, delete the key in your provider's **API key** field and put **all your keys there, separated by commas**: `key1,key2,key3`. No command needed.
 
 </td>
 <td width="50%" valign="top">
@@ -83,7 +83,7 @@ hermes plugins enable hermes-kame-api-rotation
 hermes plugins enable hermes-kame-bridge
 ```
 
-Restart Hermes once and type `/kame-keys add gemini KEY1,KEY2,KEY3` in the chat.
+Restart Hermes once. Then, where your provider's key already is (the Hermes dashboard or `~/.hermes/.env`), delete it and put **all your keys in that one field, separated by commas**: `GOOGLE_API_KEY=key1,key2,key3`. No command needed.
 
 </td>
 </tr>
