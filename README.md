@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.9.0.0-blue.svg)](#-pick-your-agent)
+[![Version](https://img.shields.io/badge/both_ports-1.9.0.1-blue.svg)](#-pick-your-agent)
 [![Free](https://img.shields.io/badge/price-free_forever-brightgreen.svg)](#-faq)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#-license)
 
@@ -104,7 +104,7 @@ line, the "which model answered" notice), also install the bridge — see the
 </tr>
 </table>
 
-Both ports ship **1.9.0.0** and share one set of rules, defaults and timings.
+Both ports ship **1.9.0.1** and share one set of rules, defaults and timings.
 
 ## 🧩 What each port does
 
@@ -127,6 +127,7 @@ Both ports ship **1.9.0.0** and share one set of rules, defaults and timings.
 | Thoughts show live; a reply that stops mid-thought is asked again on another key, then on the next model (at most two extra requests, limit learned per model) | ✅ | ✅ |
 | A model that answers 503 is raced by the next model of your list from the retry's first instant | ✅ | ✅ |
 | A model left out after failing is looked at again (10 min, doubling, at most 2 h); a best model that keeps failing is asked at most every 5 min | ✅ | ✅ |
+| A reply is never left waiting when something else could answer: another provider, the same key when you have one, another key with no list; an answer that goes silent is continued | ✅ | ✅ |
 | Speech with your rotated Gemini keys | — local voice, no key | ✅ optional |
 | Listening with your rotated Gemini keys | — local voice, no key | ✅ optional |
 | Which model answered each reply, and how long it took | ✅ a line after the reply | ✅ a Desktop notice |
