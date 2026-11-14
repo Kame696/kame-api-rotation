@@ -14,6 +14,8 @@
 
 **Free · MIT · no proxy · no account · no telemetry · works with any provider**
 
+**[🚪 Install](#-pick-your-agent) · [⚡ How fast](#-how-fast-is-it) · [🔬 How it works](#-how-it-works) · [❓ FAQ](#-faq)**
+
 </div>
 
 ---
@@ -49,6 +51,46 @@ A reply that is **late**, **stops mid-thought** or **goes silent half-way** is s
 
 Also: 🔀 **your model leads** — every reply starts on the model you picked; your fallback list takes over only when it is busy, spent or slow · 🧠 **reads every error** — 82 providers learned from their own docs · 👀 **you see everything** — which model answered each reply, and how long it took.
 
+## 🚪 Pick your agent
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🅰️ Agent Zero
+
+**[kame-api-rotation-for-agent-zero →](https://github.com/Kame696/kame-api-rotation-for-agent-zero)**
+
+Open the **Plugin Hub** inside Agent Zero and search **KAME** — or unzip the
+[latest release](https://github.com/Kame696/kame-api-rotation-for-agent-zero/releases/latest)
+into `/a0/usr/plugins/`.
+
+Then paste several keys, comma-separated, into a provider's API key field.
+
+</td>
+<td width="50%" valign="top">
+
+### 🅷 Hermes Agent (Nous Research)
+
+**[kame-api-rotation-for-hermes →](https://github.com/Kame696/kame-api-rotation-for-hermes)**
+
+Download **`KAME-for-Hermes-1.9.0.1-all-in-one.zip`** from the
+[latest release](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/latest),
+unzip it into your Hermes `plugins` folder, then:
+
+```bash
+hermes plugins enable hermes-kame-api-rotation
+hermes plugins enable hermes-kame-bridge
+```
+
+Restart Hermes once and type `/kame-keys add gemini KEY1,KEY2,KEY3` in the chat.
+
+</td>
+</tr>
+</table>
+
+Both ports ship **1.9.0.1** and share one set of rules, defaults and timings.
+
 ## ⚡ How fast is it?
 
 Measured live, on the author's own Gemini free-tier keys (four models × 14 keys), November 2026:
@@ -83,45 +125,8 @@ flowchart TD
     style J fill:#8b5cf6,color:#fff
 ```
 
-## 🚪 Pick your agent
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🅰️ Agent Zero
-
-**[kame-api-rotation-for-agent-zero →](https://github.com/Kame696/kame-api-rotation-for-agent-zero)**
-
-Open the **Plugin Hub** inside Agent Zero and search **KAME** — or unzip the
-[latest release](https://github.com/Kame696/kame-api-rotation-for-agent-zero/releases/latest)
-into `/a0/usr/plugins/`.
-
-Then paste several keys, comma-separated, into a provider's API key field.
-
-</td>
-<td width="50%" valign="top">
-
-### 🅷 Hermes Agent (Nous Research)
-
-**[kame-api-rotation-for-hermes →](https://github.com/Kame696/kame-api-rotation-for-hermes)**
-
-```bash
-hermes plugins install Kame696/kame-api-rotation-for-hermes/hermes-kame-api-rotation
-hermes plugins enable hermes-kame-api-rotation
-```
-
-Then `/kame-keys add gemini KEY1,KEY2,KEY3` in the chat. For every feature (live status
-line, the "which model answered" notice), also install the bridge — see the
-[release](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/latest).
-
-</td>
-</tr>
-</table>
-
-Both ports ship **1.9.0.1** and share one set of rules, defaults and timings.
-
-## 🧩 What each port does
+<details>
+<summary><b>🧩 Everything each port does</b></summary>
 
 | | Agent Zero | Hermes |
 |---|---|---|
@@ -148,6 +153,8 @@ Both ports ship **1.9.0.1** and share one set of rules, defaults and timings.
 | Which model answered each reply, and how long it took | ✅ a line after the reply | ✅ a Desktop notice |
 | Live panel: keys, rests, events, fallback list, settings | ✅ | ✅ |
 | Key management in the chat (`/kame-keys`) | ✅ | ✅ |
+
+</details>
 
 ## ❓ FAQ
 
