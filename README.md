@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.9.0.2-blue.svg)](#-pick-your-agent)
+[![Version](https://img.shields.io/badge/both_ports-1.9.0.4-blue.svg)](#-pick-your-agent)
 [![Free](https://img.shields.io/badge/price-free_forever-brightgreen.svg)](#-faq)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#-license)
 
@@ -74,7 +74,7 @@ Then, in **Settings → Model Provider**, delete the key in your provider's **AP
 
 **[kame-api-rotation-for-hermes →](https://github.com/Kame696/kame-api-rotation-for-hermes)**
 
-Download **`KAME-for-Hermes-1.9.0.2-all-in-one.zip`** from the
+Download **`KAME-for-Hermes-1.9.0.4-all-in-one.zip`** from the
 [latest release](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/latest),
 unzip it into your Hermes `plugins` folder, then:
 
@@ -89,7 +89,7 @@ Restart Hermes once. Then, where your provider's key already is (the Hermes dash
 </tr>
 </table>
 
-Both ports ship **1.9.0.2** and share one set of rules, defaults and timings.
+Both ports ship **1.9.0.4** and share one set of rules, defaults and timings.
 
 ## ⚡ How fast is it?
 
