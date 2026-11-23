@@ -74,13 +74,11 @@ Then, in **Settings → Model Provider**, delete the key in your provider's **AP
 
 **[kame-api-rotation-for-hermes →](https://github.com/Kame696/kame-api-rotation-for-hermes)**
 
-Download **`KAME-for-Hermes-1.9.0.5-all-in-one.zip`** from the
-[latest release](https://github.com/Kame696/kame-api-rotation-for-hermes/releases/latest),
-unzip it into your Hermes `plugins` folder, then:
+In the Hermes app: **Capabilities → Plugins → API Rotation → Install**. Or on the command line:
 
 ```bash
+hermes plugins install Kame696/kame-api-rotation-for-hermes/hermes-kame-api-rotation
 hermes plugins enable hermes-kame-api-rotation
-hermes plugins enable hermes-kame-bridge
 ```
 
 Restart Hermes once. Then, where your provider's key already is (the Hermes dashboard or `~/.hermes/.env`), delete it and put **all your keys in that one field, separated by commas**: `GOOGLE_API_KEY=key1,key2,key3`. No command needed.
