@@ -8,7 +8,7 @@
 
 [![Agent Zero port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-agent-zero?label=Agent%20Zero%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-agent-zero)
 [![Hermes port](https://img.shields.io/github/stars/Kame696/kame-api-rotation-for-hermes?label=Hermes%20port&style=social)](https://github.com/Kame696/kame-api-rotation-for-hermes)
-[![Version](https://img.shields.io/badge/both_ports-1.9.0.6-blue.svg)](#-pick-your-agent)
+[![Version](https://img.shields.io/badge/both_ports-1.9.0.5-blue.svg)](#-pick-your-agent)
 [![Free](https://img.shields.io/badge/price-free_forever-brightgreen.svg)](#-faq)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#-license)
 
@@ -87,7 +87,7 @@ Restart Hermes once. Then, where your provider's key already is (the Hermes dash
 </tr>
 </table>
 
-Both ports ship **1.9.0.6** and share one set of rules, defaults and timings.
+Both ports ship **1.9.0.5** and share one set of rules, defaults and timings.
 
 ## ⚡ How fast is it?
 
